@@ -1,0 +1,22 @@
+
+
+create database SMS
+
+Create table StudentMS(
+Regno int identity primary key,
+StudentfullName varchar(30),
+CourseJoining varchar(40),
+CourseFee money,
+BatchID varchar(30),
+DOJ smalldatetime default GETDATE(),
+Address varchar(50),
+MobileNumber int,
+EmailID varchar(30));
+
+drop table StudentMS;
+
+Insert into StudentMS Values('Ramesh','Java',10000,'9to11amJAVAFSD',getdate(),'Chennai',1234567890,'stn4@gmail.com'),
+('Mahesh','python',15000,'11to1pmPYTHONFSD',getdate(),'Madurai',1234567880,'sta3@gmail.com'),
+('Suresh','.Net',12000,'2to4pmm.NETFSD',getdate(),'Covai',1234567870,'ssb2@gmail.com');
+
+select * from StudentMS
