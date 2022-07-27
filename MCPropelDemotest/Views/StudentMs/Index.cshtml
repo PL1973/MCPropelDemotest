@@ -1,0 +1,90 @@
+﻿@model IEnumerable<MCPropelDemotest.Models.StudentMs>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<body style="background-color:lightcyan">
+    <form method="get" asp-action="Index">
+        <p>
+            <input type="search" placeholder="Enter mob no"
+                   value="@ViewData["GetStudentDetails"]" name="TSearch" ;" />
+
+            <input type="submit" value="Search" class="btn btn-secondary" />
+            <a asp-action="Index">Get All Students Details</a>
+        </p>
+    </form>
+</body>
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentfullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseJoining)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseFee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BatchId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MobileNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentfullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseJoining)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BatchId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Regno">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Regno">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Regno">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

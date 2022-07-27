@@ -1,0 +1,78 @@
+﻿@model MCPropelDemotest.Models.StudentMs
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>StudentMs</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StudentfullName" class="control-label"></label>
+                <input asp-for="StudentfullName" class="form-control" />
+                <span asp-validation-for="StudentfullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseJoining" class="control-label"></label>
+                <input asp-for="CourseJoining" class="form-control" />
+                <span asp-validation-for="CourseJoining" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseFee" class="control-label"></label>
+                <input asp-for="CourseFee" class="form-control" />
+                <span asp-validation-for="CourseFee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BatchId" class="control-label"></label>
+                <input asp-for="BatchId" class="form-control" />
+                @*<span asp-validation-for="BatchId" class="text-danger"></span>*@
+
+                @*<div class="form-group">*@
+                <label asp-for="BatchId" class="control-label"></label>
+                <select asp-for="BatchId" class="form-control">
+                    <option value="9to11amJAVAFSD">---Select---</option>
+                    <option value="9to11amJAVAFSD">9to11amJAVAFSD</option>
+                    <option value="1.30to3pmPython">11to1pmPYTHONFSD</option>
+                    <option value="3to5pmC++">2to4pmm.NETFSD</option>
+
+                    @*<option value="9to11amJAVAFSD">9to11amJAVAFSD</option>*@
+                </select>
+                <span asp-validation-for="BatchId" class="text-danger"></span>
+
+                @*</div>*@
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MobileNumber" class="control-label"></label>
+                    <input asp-for="MobileNumber" class="form-control" />
+                    <span asp-validation-for="MobileNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmailId" class="control-label"></label>
+                    <input asp-for="EmailId" class="form-control" />
+                    <span asp-validation-for="EmailId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
